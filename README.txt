@@ -1,3 +1,7 @@
+This project consists the codebase for the Turkish Covid-19 Search Engine.
+
+Can be Run As : 
+
 install JPype1, BeautifulSoup(bs4), requests package
 
 In pageRetrieval.py(line 16-17) and indexer.py(line 13-14) files update paths according to your jvm.dll file and zemberek-tum-2.0.jar file's location

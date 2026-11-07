@@ -26,6 +26,13 @@
   <a href="pageRetrieval.py"><img alt="Retrieval" src="https://img.shields.io/badge/Retrieval-1E2A38?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJtMjEgMjEtNC4zNC00LjM0Ii8%2BPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjwvZz48L3N2Zz4%3D&logoColor=white"></a>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/hero-dark.webp">
+    <img src="docs/assets/readme/hero-light.webp" alt="Code of the TF-IDF scoring step in pageRetrieval.py, with idf and page score loops" width="960">
+  </picture>
+</p>
+
 Information Retrieval System is a small search engine for Turkish COVID-19 web content, written as coursework in 2021. It crawls pages, builds an inverted index with Turkish stemming and ranks matches for a query typed at the console. The whole program is three Python scripts plus the Zemberek library jar.
 
 ---
@@ -39,6 +46,49 @@ The three stages mirror the classic information retrieval pipeline.
 | <img src="docs/assets/readme/icons/globe.svg" width="18" height="18" alt=""> **Crawl** | crawler.py runs one crawl from each of four Turkish COVID-19 pages. Each crawl stops at 2,500 pages and appends them to webPages.json. |
 | <img src="docs/assets/readme/icons/list-filter.svg" width="18" height="18" alt=""> **Index** | indexer.py strips punctuation, stems words with Zemberek and writes term frequencies per page to invertedList.json. |
 | <img src="docs/assets/readme/icons/search.svg" width="18" height="18" alt=""> **Rank** | pageRetrieval.py scores pages with TF-IDF, using (1 + log10 tf) times log10(N / df), and prints the matching URLs. |
+
+## A quick tour
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/download-dark.webp">
+        <img src="docs/assets/readme/tour/download-light.webp" alt="Code card of the crawler download_url method">
+      </picture>
+      <h3>Download a page</h3>
+      A page is fetched, its title and text are kept, and it counts toward the cap.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/loop-dark.webp">
+        <img src="docs/assets/readme/tour/loop-light.webp" alt="Code card of the crawler run loop">
+      </picture>
+      <h3>Crawl loop</h3>
+      URLs are visited until the queue is empty or 2,500 pages are stored.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/index-dark.webp">
+        <img src="docs/assets/readme/tour/index-light.webp" alt="Code card of the inverted index loop in indexer.py">
+      </picture>
+      <h3>Inverted index</h3>
+      Each word is stemmed with Zemberek and counted per page.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/tfidf-dark.webp">
+        <img src="docs/assets/readme/tour/tfidf-light.webp" alt="Code card of the TF-IDF scoring in pageRetrieval.py">
+      </picture>
+      <h3>TF-IDF scoring</h3>
+      Every page that contains a query word is scored with (1 + log10 tf) times the idf.
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>Code cards show the files as they are in the repository.</sub></p>
 
 ## Features
 
@@ -96,5 +146,7 @@ The seeds are four pages from 2021, and some may have moved. The crawler has not
 </details>
 
 If Information Retrieval System is useful to you, a ⭐ helps other people find it.
+
+Photos behind the screenshots are credited in [docs/assets/readme/CREDITS.md](docs/assets/readme/CREDITS.md).
 
 [![views](https://hits.sh/github.com/mertkayacs/InformatiionRetrievalSystem.svg?view=today-total&style=flat-square&label=views&color=2E4A7D&labelColor=1E2A38)](https://github.com/mertkayacs/InformatiionRetrievalSystem)

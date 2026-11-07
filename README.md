@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Crawl Turkish COVID-19 pages. Search them with TF-IDF.</h1>
+<h1 align="center">Crawl Turkish COVID‑19 pages.<br>Search them with TF‑IDF.</h1>
 
 <p align="center">
   Coursework from 2021: a crawler, an inverted index and TF-IDF retrieval.<br>
@@ -29,7 +29,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/hero-dark.webp">
-    <img src="docs/assets/readme/hero-light.webp" alt="Code of the TF-IDF scoring step in pageRetrieval.py, with idf and page score loops" width="960">
+    <img src="docs/assets/readme/hero-light.webp" alt="Code of the TF-IDF scoring step in pageRetrieval.py, with the page score loop" width="960">
   </picture>
 </p>
 
@@ -79,11 +79,11 @@ The three stages mirror the classic information retrieval pipeline.
     </td>
     <td width="50%" valign="top">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/tfidf-dark.webp">
-        <img src="docs/assets/readme/tour/tfidf-light.webp" alt="Code card of the TF-IDF scoring in pageRetrieval.py">
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/save-dark.webp">
+        <img src="docs/assets/readme/tour/save-light.webp" alt="Code card of the end of indexer.py that writes invertedList.json">
       </picture>
-      <h3>TF-IDF scoring</h3>
-      Every page that contains a query word is scored with (1 + log10 tf) times the idf.
+      <h3>Save the index</h3>
+      The inverted index is written to invertedList.json and the Zemberek JVM is shut down.
     </td>
   </tr>
 </table>

@@ -59,7 +59,7 @@ class Crawler:
             self.add_url_to_visit(url)
 
     def run(self):
-        while self.urls_to_visit and self.numOfDownloadedURLs <= 2500:
+        while self.urls_to_visit and self.numOfDownloadedURLs < 2500:
             #print("self.urls_to_visit: ", self.urls_to_visit)
             logging.info(f'numOfDownloadedURLs: {self.numOfDownloadedURLs}')
             url = self.urls_to_visit.pop(0)
